@@ -1,0 +1,18 @@
+﻿@foreach (var menuItem in _menus)
+{
+    if (menuItem.IsGroup)
+    {
+        <MudNavGroup Title="@menuItem.Title" Expanded="@menuItem.Expanded">
+            @foreach (var groupItem in menuItem.Childs)
+            {
+                <MudNavLink Href="@groupItem.Url">@groupItem.Title</MudNavLink>
+            }
+        </MudNavGroup>
+    }
+    else
+    {
+        <MudNavLink Href="@menuItem.Url">@menuItem.Title</MudNavLink>
+    }
+}
+
+

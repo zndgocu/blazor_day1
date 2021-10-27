@@ -1,0 +1,28 @@
+﻿@page "/day1-grid/learn-grid"
+
+<MudTable Items="@_v_users" MultiSelection="true" @bind-SelectedItems="_selectedItems" Hover="@_hover" @ref="_refTable">
+    <HeaderContent>
+        <MudTh>id</MudTh>
+        <MudTh>password</MudTh>
+        <MudTh>name</MudTh>
+        <MudTh>phone</MudTh>
+        <MudTh>address</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="id">@context.Id</MudTd>
+        <MudTd DataLabel="password">@context.Pw</MudTd>
+        <MudTd DataLabel="name">@context.Name</MudTd>
+        <MudTd DataLabel="phone">@context.Phone</MudTd>
+        <MudTd DataLabel="address">@context.Address</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager PageSizeOptions="new int[]{50, 100}" />
+    </PagerContent>
+    <FooterContent>
+        <MudTd colspan="5">Select All</MudTd>
+    </FooterContent>
+</MudTable>
+
+@code {
+
+}
